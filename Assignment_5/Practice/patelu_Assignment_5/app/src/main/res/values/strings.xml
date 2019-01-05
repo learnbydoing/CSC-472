@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Remote Control</string>
+    <string name="one">001</string>
+    <string name="two">002</string>
+    <string name="five">005</string>
+    <string name="seven">007</string>
+    <string name="all_nines">999</string>
+</resources>

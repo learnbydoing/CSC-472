@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_configure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.urvipatel.patelu_assignment_5.ConfigureActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/favoriteChannelTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="Configure Favorite Channels"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/favoriteChannelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favorite\nChannel\nButton:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_below="@id/favoriteChannelTitle"/>
+
+
+            <RadioGroup
+                android:id="@+id/leftMiddleRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_toRightOf="@id/favoriteChannelLabel"
+                android:layout_below="@id/favoriteChannelTitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp">
+
+                <RadioButton android:id="@+id/radioButtonLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Left"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"/>
+                <RadioButton android:id="@+id/radioButtonMiddle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Middle"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"/>
+                <RadioButton android:id="@+id/radioButtonRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Right"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"/>
+            </RadioGroup>
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:text="Label"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/userFavoriteLabel" />
+
+        <EditText
+            android:id="@id/userFavoriteLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSend"
+            android:inputType="textPersonName|textCapWords"
+            android:layout_below="@id/favoriteChannelLabel"
+            android:layout_alignStart="@+id/leftMiddleRight"
+            android:maxLines="1"/>
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/controls">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:stretchColumns="0">
+
+        <TableRow>
+        <TextView
+            android:id="@+id/userFavoriteChannelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:text="Channel:"/>
+
+        <TextView
+            android:id="@+id/userFavoriteChannelIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_column="2"
+            android:gravity="center"
+            android:textSize="20sp" />
+        </TableRow>
+
+         <TableRow>
+             <Button
+                 android:id="@+id/configButton0"
+                 android:text="0"
+                 android:layout_column="1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
+             <Button
+                 android:id="@+id/configButton1"
+                 android:text="1"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
+             <Button
+                 android:id="@+id/configButton2"
+                 android:text="2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
+         </TableRow>
+
+
+
+        <TableRow>
+            <Button
+                android:id="@+id/configButton3"
+                android:text="3"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/configButton4"
+                android:text="4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/configButton5"
+                android:text="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+         </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/configButton6"
+                android:text="6"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/configButton7"
+                android:text="7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/configButton8"
+                android:text="8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/configButton9"
+                android:text="9"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/configButtonChPlus"
+                android:text="Ch+"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/configButtonChMinus"
+                android:text="Ch-"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/configCancelButton"
+                android:text="Cancel"
+                android:layout_column="2"
+                android:layout_marginTop="20dp"/>
+            <Button
+                android:id="@+id/configSaveButton"
+                android:text="Save"
+                android:layout_marginTop="20sp"/>
+        </TableRow>
+
+
+
+        </TableLayout>
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+

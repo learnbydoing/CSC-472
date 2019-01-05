@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dvr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.urvipatel.patelu_assignment_5.DvrActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue50"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/DvrPowerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DVR Power:"
+            android:textSize="20sp"
+            android:layout_toLeftOf="@+id/DvrPowerIndicator"/>
+
+        <TextView
+            android:id="@id/DvrPowerIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="15dp"
+            android:text="On"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/StateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/DvrPowerLabel"
+            android:layout_below="@id/DvrPowerLabel"
+            android:textSize="20sp"
+            android:text="State:"/>
+
+
+        <TextView
+            android:id="@+id/DvrStateIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/DvrPowerIndicator"
+            android:text="Stopped"/>
+
+        <TextView
+            android:id="@+id/myDVRText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_alignBaseline="@id/StateLabel"
+            android:layout_marginTop="10dp"
+            android:text="My DVR"/>
+     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow50"
+        android:layout_below="@id/display">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="DVR Remote Control"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/DvrPowerSwitchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Power:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@id/title"
+            android:layout_alignBaseline="@+id/DvrPowerSwitch"/>
+
+        <Switch
+            android:id="@id/DvrPowerSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="tvPowerSwitch"
+            android:layout_marginBottom="15dp"
+            android:checked="true"
+            android:layout_below="@id/title"
+            android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow50"
+        android:layout_below="@id/controls">
+
+        <TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/firstRow"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp">
+
+        <TableRow>
+            <Button
+                android:id="@+id/buttonPlay"
+                android:width="100dp"
+                android:text="Play" />
+            <Button
+                android:id="@+id/buttonStop"
+                android:width="100dp"
+                android:text="Stop" />
+            <Button
+                android:id="@+id/buttonPause"
+                android:width="100dp"
+                android:text="Pause" />
+        </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/secondRow"
+            android:layout_marginLeft="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstRow">
+
+            <TableRow>
+                <Button
+                    android:id="@+id/buttonFastForward"
+                    android:width="150dp"
+                    android:text="Fast Forward"/>
+
+                <Button
+                    android:id="@+id/buttonFastRewind"
+                    android:width="150dp"
+                    android:text="Fast Rewind"
+                    />
+            </TableRow>
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/thirdRow"
+            android:layout_marginLeft="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/secondRow">
+
+            <TableRow>
+                <Button
+                    android:id="@+id/buttonRecord"
+                    android:width="100dp"
+                    android:text="Record"/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/bottomRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/thirdRow">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="205dp"/>
+
+            <Button
+                android:id="@+id/buttonSwitchToTV"
+                android:layout_width="match_parent"
+                android:text="Switch to TV"/>
+        </TableLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,313 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue50">
+
+        <TextView
+            android:id="@+id/powerlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TV Power:"
+            android:textSize="20sp"
+            android:layout_toLeftOf="@+id/powerIndicator" />
+
+        <TextView
+            android:id="@id/powerIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="15dp"
+            android:text="On"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/volumeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/powerlabel"
+            android:layout_below="@id/powerlabel"
+            android:textSize="20sp"
+            android:text="Speaker Volume:"/>
+
+
+        <TextView
+            android:id="@+id/volumeIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/powerIndicator"
+            android:text="50"/>
+
+        <TextView
+            android:id="@+id/myTvText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_alignBaseline="@id/volumeLabel"
+            android:layout_toLeftOf="@id/volumeLabel"
+            android:text="My TV"/>
+
+        <TextView
+            android:id="@+id/channelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/powerlabel"
+            android:layout_below="@id/volumeLabel"
+            android:textSize="20sp"
+            android:text="Current Channel:"/>
+
+        <TextView
+            android:id="@+id/channelIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@id/volumeIndicator"
+            android:text="001"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow50"
+        android:layout_below="@id/display">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="My Remote Control"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/powerSwitchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Power:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@id/title"
+            android:layout_alignBaseline="@+id/powerSwitch"/>
+
+        <Space
+            android:id="@+id/leftSpace"
+            android:layout_toRightOf="@id/powerSwitchLabel"
+            android:layout_alignBaseline="@id/powerSwitchLabel"
+            android:layout_below="@id/title"
+            android:layout_alignStart="@+id/volumeSeekbar"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"/>
+
+        <Switch
+            android:id="@id/powerSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="tvPowerSwitch"
+            android:layout_marginBottom="15dp"
+            android:checked="true"
+            android:layout_below="@id/title"
+            android:layout_toRightOf="@id/leftSpace"/>
+        <Space
+            android:id="@+id/rightSpace"
+            android:layout_alignEnd="@id/volumeSeekbar"
+            android:layout_alignBaseline="@id/powerSwitchLabel"
+            android:layout_below="@id/title"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:id="@+id/volumeSeekbarLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volume: "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@id/powerSwitchLabel"
+            android:layout_alignBaseline="@+id/volumeSeekbar"/>
+
+        <SeekBar
+            android:id="@id/volumeSeekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@id/powerSwitch"
+            android:layout_toEndOf="@id/volumeSeekbarLabel"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow50"
+        android:layout_below="@id/controls">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:stretchColumns="0">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:text="Channel:"/>
+
+                <Button
+                    android:id="@+id/button0"
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/button1"
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/button2"
+                    android:text="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow>
+                <Button
+                    android:id="@+id/button3"
+                    android:text="3"
+                    android:layout_column="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/button4"
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/button5"
+                    android:text="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow>
+                <Button
+                    android:id="@+id/button6"
+                    android:text="6"
+                    android:layout_column="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/button7"
+                    android:text="7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/button8"
+                    android:text="8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow>
+                <Button
+                    android:id="@+id/button9"
+                    android:text="9"
+                    android:layout_column="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/buttonChannelPlus"
+                    android:text="ch+"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/buttonChannelMinus"
+                    android:text="ch-"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"
+                    android:text="Favorite\nChannel"/>
+
+                <Button
+                    android:id="@+id/leftFavoriteButton"
+                    android:text="ABC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/middleFavoriteButton"
+                    android:text="NBC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/rightFavoriteButton"
+                    android:text="cbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+           <TableRow>
+               <Space
+                   android:layout_width="match_parent"
+                   android:layout_height="65dp"/>
+           </TableRow>
+
+            <TableRow>
+            <Button
+                android:id="@+id/buttonSwitchToDVR"
+                android:layout_width="match_parent"
+                android:width="100dp"
+                android:layout_span="2"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="Switch to DVR"/>
+            <Button
+                android:id="@+id/buttonConfigure"
+                android:layout_span="2"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Configure"/>
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+</RelativeLayout>
